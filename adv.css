@@ -1,0 +1,24 @@
+.container {
+    min-height: 100vh;
+  }
+  
+  header {
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  
+  aside {
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  
+  main {
+    background-color: #ffffff;
+    padding: 20px;
+  }
+  
+  footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  
