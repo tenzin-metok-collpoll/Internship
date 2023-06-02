@@ -1,0 +1,32 @@
+.container {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  #taskInput {
+    padding: 5px;
+    width: 300px;
+  }
+  
+  #addButton {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #addButton:hover {
+    background-color: #45a049;
+  }
+  
+  li {
+    margin-bottom: 5px;
+  }
+
+  .clearfix:after {
+    content:"";
+    display: table;
+    clear: both;
+}
+  
