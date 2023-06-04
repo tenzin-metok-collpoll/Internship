@@ -21,7 +21,7 @@ h1 {
 .grid-container {
     display: grid;
     grid-template-areas:
-      'right right right right left left';
+      'right right right right left left left';
     background-color: #83b5e0;
     padding: 10px;
   }
@@ -38,7 +38,7 @@ h1 {
 }
 #main {
 	margin: 20px auto;    
-	max-width: 600px;
+	max-width: 600px; 
 }
 button {
     border: none;
@@ -82,7 +82,8 @@ button {
 }
 #colorDisplay {
     text-align: end;
-   padding-right: 5%;
+    letter-spacing: 3px;
+    padding-right: 5%;
     background-color: #83b5e0;
 	font-size: 200%;
 }
