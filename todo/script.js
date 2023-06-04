@@ -7,7 +7,7 @@ var taskCount = document.getElementById("taskCount");
 // Function to add a new task
 function addTask() {
   var task = taskInput.value;
-  
+  console.log("----------",task);
   if (task !== "") {
     var li = document.createElement("li");
     li.appendChild(document.createTextNode(task));

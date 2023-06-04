@@ -15,12 +15,16 @@
     border: none;
     cursor: pointer;
   }
+  .deleteButton{
+    margin: 20px;
+  }
   
   #addButton:hover {
     background-color: #45a049;
   }
   
   li {
+    padding-right: 30px;
     margin-bottom: 5px;
   }
 
