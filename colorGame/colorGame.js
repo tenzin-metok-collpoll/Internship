@@ -1,11 +1,11 @@
 var numberOfCircles = 6;
-var colors = generateRandomColors(numberOfCircles);
+var colors = generateRandomColors (numberOfCircles);
 var circles = document.querySelectorAll(".circle");
-var pickedColor = getRandomColor();
-var colorDisplay = document.querySelector("#colorDisplay");
+var selectedColor = getRandomColor();
+var rgb = document.querySelector("#rgb");
 var messageDisplay = document.querySelector("#message");
 var gridContainer = document.querySelector(".grid-container");
-var resetButton = document.querySelector("#newColor");
+var newColor = document.querySelector("#newColor");
 var levelEasy = document.querySelector("#easy");
 var levelHard = document.querySelector("#hard");
 
@@ -28,19 +28,16 @@ function getRandomColor(){
 	console.log('random: ', random);
 	return colors[random];
 }
-colorDisplay.textContent = pickedColor;
+rgb.textContent = selectedColor;
 for(var i = 0; i < circles.length; i++) {
 	circles[i].style.backgroundColor = colors[i];
-	// console.log('circles[i].style.backgroundColor: ', circles[i].style.backgroundColor);
 	circles[i].addEventListener("click",function() {
 		var clickedColor = this.style.backgroundColor;
-		console.log(clickedColor, pickedColor);
-		if(clickedColor === pickedColor){
+		if(clickedColor === selectedColor){
 			console.log("==========");
 			messageDisplay.textContent = "You Win!!!";
-			resetButton.textContent = "Play Again";
+			newColor.textContent = "Play Again";
 			changeColors(clickedColor);
-			// gridContainer.style.background = clickedColor;
 		}	else {
 			this.style.backgroundColor = "rgb(156, 241, 250)";//setting to background color
 			messageDisplay.textContent = "Try Again";
@@ -58,8 +55,10 @@ levelEasy.addEventListener("click", () =>{
 	levelHard.classList.remove("default");
 	levelEasy.classList.add("default");
 	colors = generateRandomColors(numberOfCircles);
-	pickedColor = getRandomColor();
-	colorDisplay.textContent = pickedColor;
+	console.log('colors: ', colors);
+	selectedColor = getRandomColor();
+	rgb.textContent = selectedColor;
+	
 	for(var i = 0; i < circles.length; i++){
 		if(colors[i]){
 			circles[i].style.background = colors[i];
@@ -75,19 +74,20 @@ levelHard.addEventListener("click", ()=>{
 	levelEasy.classList.remove("default");
 	levelHard.classList.add("default");	
 	colors = generateRandomColors(numberOfCircles);
-	pickedColor = getRandomColor();
-	colorDisplay.textContent = pickedColor;
+	selectedColor = getRandomColor();
+	rgb.textContent = selectedColor;
+	
 	for(var i = 0; i < circles.length; i++){
 		circles[i].style.backgroundColor = colors[i];
 		circles[i].style.display = "block";
 	}
 });
 
-resetButton.addEventListener("click", ()=>{
+newColor.addEventListener("click", ()=>{
 	colors = generateRandomColors(numberOfCircles);
-	pickedColor = getRandomColor();
-	colorDisplay.textContent = pickedColor;
-	resetButton.textContent = "NEW COLORS";
+	selectedColor = getRandomColor();
+	rgb.textContent = selectedColor;
+	newColor.textContent = "NEW COLORS";
 	messageDisplay.textContent = "";
 	for(var i = 0; i < circles.length; i++){
 		circles[i].style.backgroundColor = colors[i];

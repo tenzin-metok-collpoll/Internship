@@ -57,11 +57,11 @@ button {
 
 }
 #newColor {
-    width: 200px;
+    width: 10rem;
     border: none;
 	background-color: #2196F3;
 	text-transform: uppercase;
-	height: 40px;
+	height: 100%;
 	font-weight: 800;
     font-size: medium;
 	color: black;
@@ -80,9 +80,9 @@ button {
     font-size: 20px;
     font-weight: bold;
 }
-#colorDisplay {
+#rgb {
     text-align: end;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     padding-right: 5%;
     background-color: #83b5e0;
 	font-size: 200%;
