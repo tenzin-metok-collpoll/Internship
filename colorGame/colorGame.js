@@ -1,56 +1,60 @@
-var numberOfCircles = 6;
-var colors = generateRandomColors (numberOfCircles);
-var circles = document.querySelectorAll(".circle");
-var selectedColor = getRandomColor();
-var rgb = document.querySelector("#rgb");
-var messageDisplay = document.querySelector("#message");
-var gridContainer = document.querySelector(".grid-container");
-var newColor = document.querySelector("#newColor");
-var levelEasy = document.querySelector("#easy");
-var levelHard = document.querySelector("#hard");
+let numberOfCircles = 6;
+let colors = generateRandomColors (numberOfCircles);
+let circles = document.querySelectorAll(".circle");
+let selectedColor = getRandomColor();
+let rgb = document.querySelector("#rgb");
+let message = document.querySelector("#message");
+let gridContainer = document.querySelector(".grid-container");
+let newColor = document.querySelector("#newColor");
+let levelHard = document.querySelector("#hard");
+let levelEasy = document.querySelector("#easy");
+
 
 function generateRandomColors(num){
-	var arr = []
+	const arr = []
 	let randomColor = ()=>{
-		var r = Math.floor(Math.random() * 256);
-		var g = Math.floor(Math.random() * 256);
-		var b = Math.floor(Math.random() * 256);
+		let r = Math.floor(Math.random() * 256);
+		let g = Math.floor(Math.random() * 256);
+		let b = Math.floor(Math.random() * 256);
 		return "rgb(" + r +", " + g +", " + b +")";
 	}
-	for(var i = 0; i < num; i++){
+	for(let i = 0; i < num; i++){
 		arr.push(randomColor())
 	}
 	console.log("-----------------",arr);
-	return arr;
+	return (arr);
 }
 function getRandomColor(){
-	var random = Math.floor(Math.random() * colors.length)
+	const random = Math.floor(Math.random() * colors.length)
 	console.log('random: ', random);
 	return colors[random];
 }
 rgb.textContent = selectedColor;
-for(var i = 0; i < circles.length; i++) {
+for(let i = 0; i < circles.length; i++) {
 	circles[i].style.backgroundColor = colors[i];
 	circles[i].addEventListener("click",function() {
-		var clickedColor = this.style.backgroundColor;
+		let clickedColor = this.style.backgroundColor;
 		if(clickedColor === selectedColor){
 			console.log("==========");
-			messageDisplay.textContent = "You Win!!!";
+			message.textContent = "You Win!!!";
 			newColor.textContent = "Play Again";
-			changeColors(clickedColor);
+			console.log('newColor.textContent: ', newColor.textContent);
+			changeAllColors(clickedColor);
+			
 		}	else {
 			this.style.backgroundColor = "rgb(156, 241, 250)";//setting to background color
-			messageDisplay.textContent = "Try Again";
+			message.textContent = "Try Again";
 		}
 		});
 }
 
-function changeColors(clickedColor){
-	for(var i = 0; i < circles.length; i++){
+function changeAllColors(clickedColor){
+	for(let i = 0; i < circles.length; i++){
 		circles[i].style.background = clickedColor;
 	}	
 }
 levelEasy.addEventListener("click", () =>{
+	message.textContent = "";
 	numberOfCircles = 3;
 	levelHard.classList.remove("default");
 	levelEasy.classList.add("default");
@@ -59,7 +63,7 @@ levelEasy.addEventListener("click", () =>{
 	selectedColor = getRandomColor();
 	rgb.textContent = selectedColor;
 	
-	for(var i = 0; i < circles.length; i++){
+	for(let i = 0; i < circles.length; i++){
 		if(colors[i]){
 			circles[i].style.background = colors[i];
 		} else {
@@ -70,6 +74,7 @@ levelEasy.addEventListener("click", () =>{
 
 
 levelHard.addEventListener("click", ()=>{
+	message.textContent = "";
 	numberOfCircles = 6;
 	levelEasy.classList.remove("default");
 	levelHard.classList.add("default");	
@@ -77,7 +82,7 @@ levelHard.addEventListener("click", ()=>{
 	selectedColor = getRandomColor();
 	rgb.textContent = selectedColor;
 	
-	for(var i = 0; i < circles.length; i++){
+	for(let i = 0; i < circles.length; i++){
 		circles[i].style.backgroundColor = colors[i];
 		circles[i].style.display = "block";
 	}
@@ -88,7 +93,7 @@ newColor.addEventListener("click", ()=>{
 	selectedColor = getRandomColor();
 	rgb.textContent = selectedColor;
 	newColor.textContent = "NEW COLORS";
-	messageDisplay.textContent = "";
+	message.textContent = "";
 	for(var i = 0; i < circles.length; i++){
 		circles[i].style.backgroundColor = colors[i];
 	}
