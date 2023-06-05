@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1">
+    <link href="colorGame.css" rel="stylesheet">
+</head>
+<body>
+    <h1>GUESS THE COLOR</h1>
+    <br />
+    <div class="row limited level">
+        <div class="column small-12 medium-12 large-12">
+        LEVEL &nbsp;
+        <button id="easy">Easy</button>
+        <button id="hard" class="default">Hard</button>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div class="grid-container">
+        <div class="option" id="rgb">RGB</div>
+        <div class="text"><button id="newColor">New Colors</button></div>
+    </div>
+    <br />
+    <p id="message"></p>
+    
+
+    <div id="main">
+        <div class="row tenz">
+        <div class="col-4 circle"></div>
+        <div class="col-4 circle"></div>
+        <div class="col-4 circle"></div>
+        </div> 
+        <div class="row">
+        <div class="col-4 circle"></div>
+        <div class="col-4 circle"></div>
+        <div class="col-4 circle"></div>
+        </div>  
+    </div>
+    <script src="colorGame.js"></script>
+</body>
+</html>
