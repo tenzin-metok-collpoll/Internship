@@ -90,7 +90,7 @@ button {
 .circle {
     margin: 1.66%;
 	border-radius: 100%;
-	width: 30%;
+	width:30%;
 	padding-bottom: 30%;
 	float: left;
 }
@@ -98,3 +98,6 @@ button:hover {
 	color: black;
 	background: rgb(9, 81, 169);
 }
+
+
+  
